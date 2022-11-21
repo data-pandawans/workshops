@@ -1,0 +1,22 @@
+[2022-11-21 23:00:29,693] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: etl_example.enrich_data scheduled__2022-11-21T22:00:00+00:00 [queued]>
+[2022-11-21 23:00:29,720] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: etl_example.enrich_data scheduled__2022-11-21T22:00:00+00:00 [queued]>
+[2022-11-21 23:00:29,722] {taskinstance.py:1241} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 23:00:29,723] {taskinstance.py:1242} INFO - Starting attempt 1 of 1
+[2022-11-21 23:00:29,724] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 23:00:29,744] {taskinstance.py:1262} INFO - Executing <Task(PythonOperator): enrich_data> on 2022-11-21 22:00:00+00:00
+[2022-11-21 23:00:29,751] {standard_task_runner.py:52} INFO - Started process 3505 to run task
+[2022-11-21 23:00:29,756] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'etl_example', 'enrich_data', 'scheduled__2022-11-21T22:00:00+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/etl_example.py', '--cfg-path', '/tmp/tmpi58ui_m4', '--error-file', '/tmp/tmpy19k_g3v']
+[2022-11-21 23:00:29,758] {standard_task_runner.py:77} INFO - Job 54: Subtask enrich_data
+[2022-11-21 23:00:29,830] {logging_mixin.py:109} INFO - Running <TaskInstance: etl_example.enrich_data scheduled__2022-11-21T22:00:00+00:00 [running]> on host e6f0f1db9976
+[2022-11-21 23:00:29,907] {taskinstance.py:1414} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=etl_example
+AIRFLOW_CTX_TASK_ID=enrich_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-21T22:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-21T22:00:00+00:00
+[2022-11-21 23:00:29,949] {python.py:152} INFO - Done. Returned value was: None
+[2022-11-21 23:00:29,968] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=etl_example, task_id=enrich_data, execution_date=20221121T220000, start_date=20221121T230029, end_date=20221121T230029
+[2022-11-21 23:00:30,010] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-11-21 23:00:30,054] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

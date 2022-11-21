@@ -1,0 +1,23 @@
+[2022-11-21 22:15:01,025] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: python_operator.print_the_context scheduled__2022-11-21T22:10:00+00:00 [queued]>
+[2022-11-21 22:15:01,052] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: python_operator.print_the_context scheduled__2022-11-21T22:10:00+00:00 [queued]>
+[2022-11-21 22:15:01,054] {taskinstance.py:1241} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 22:15:01,055] {taskinstance.py:1242} INFO - Starting attempt 1 of 1
+[2022-11-21 22:15:01,056] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 22:15:01,076] {taskinstance.py:1262} INFO - Executing <Task(PythonOperator): print_the_context> on 2022-11-21 22:10:00+00:00
+[2022-11-21 22:15:01,088] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'python_operator', 'print_the_context', 'scheduled__2022-11-21T22:10:00+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/python_example.py', '--cfg-path', '/tmp/tmpc4cjovqv', '--error-file', '/tmp/tmpkz1h21yj']
+[2022-11-21 22:15:01,091] {standard_task_runner.py:77} INFO - Job 35: Subtask print_the_context
+[2022-11-21 22:15:01,083] {standard_task_runner.py:52} INFO - Started process 1761 to run task
+[2022-11-21 22:15:01,169] {logging_mixin.py:109} INFO - Running <TaskInstance: python_operator.print_the_context scheduled__2022-11-21T22:10:00+00:00 [running]> on host e6f0f1db9976
+[2022-11-21 22:15:01,275] {taskinstance.py:1414} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=python_operator
+AIRFLOW_CTX_TASK_ID=print_the_context
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-21T22:10:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-21T22:10:00+00:00
+[2022-11-21 22:15:01,290] {logging_mixin.py:109} INFO - 2022-11-21
+[2022-11-21 22:15:01,292] {python.py:152} INFO - Done. Returned value was: Olá pandawans
+[2022-11-21 22:15:01,333] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=python_operator, task_id=print_the_context, execution_date=20221121T221000, start_date=20221121T221501, end_date=20221121T221501
+[2022-11-21 22:15:01,399] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-11-21 22:15:01,465] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

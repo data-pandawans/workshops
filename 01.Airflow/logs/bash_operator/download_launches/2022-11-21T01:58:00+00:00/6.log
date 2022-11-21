@@ -1,0 +1,30 @@
+[2022-11-21 21:53:32,699] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: bash_operator.download_launches manual__2022-11-21T21:45:02.928692+00:00 [queued]>
+[2022-11-21 21:53:32,721] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: bash_operator.download_launches manual__2022-11-21T21:45:02.928692+00:00 [queued]>
+[2022-11-21 21:53:32,722] {taskinstance.py:1241} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 21:53:32,723] {taskinstance.py:1242} INFO - Starting attempt 6 of 6
+[2022-11-21 21:53:32,723] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 21:53:32,739] {taskinstance.py:1262} INFO - Executing <Task(BashOperator): download_launches> on 2022-11-21 21:45:02.928692+00:00
+[2022-11-21 21:53:32,749] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'bash_operator', 'download_launches', 'manual__2022-11-21T21:45:02.928692+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/bash_example.py', '--cfg-path', '/tmp/tmp_t069re4', '--error-file', '/tmp/tmperobknbs']
+[2022-11-21 21:53:32,750] {standard_task_runner.py:77} INFO - Job 16: Subtask download_launches
+[2022-11-21 21:53:32,745] {standard_task_runner.py:52} INFO - Started process 837 to run task
+[2022-11-21 21:53:32,799] {logging_mixin.py:109} INFO - Running <TaskInstance: bash_operator.download_launches manual__2022-11-21T21:45:02.928692+00:00 [running]> on host e6f0f1db9976
+[2022-11-21 21:53:32,850] {taskinstance.py:1414} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bash_operator
+AIRFLOW_CTX_TASK_ID=download_launches
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-21T21:45:02.928692+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-11-21T21:45:02.928692+00:00
+[2022-11-21 21:53:32,852] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-11-21 21:53:32,853] {subprocess.py:74} INFO - Running command: ['bash', '-c', "curl -o /opt/***/datalake/bronze/launches.json -L 'https://ll.thespacedevs.com/2.0.0/launch/upcoming'"]
+[2022-11-21 21:53:32,864] {subprocess.py:85} INFO - Output:
+[2022-11-21 21:53:32,874] {subprocess.py:89} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2022-11-21 21:53:32,876] {subprocess.py:89} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2022-11-21 21:53:33,419] {subprocess.py:89} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+[2022-11-21 21:53:34,175] {subprocess.py:89} INFO -  41 25360   41 10592    0     0   8160      0  0:00:03  0:00:01  0:00:02  8160100 25360  100 25360    0     0  19507      0  0:00:01  0:00:01 --:--:-- 7210k
+[2022-11-21 21:53:34,176] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-11-21 21:53:34,213] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=bash_operator, task_id=download_launches, execution_date=20221121T214502, start_date=20221121T215332, end_date=20221121T215334
+[2022-11-21 21:53:34,245] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-11-21 21:53:34,286] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

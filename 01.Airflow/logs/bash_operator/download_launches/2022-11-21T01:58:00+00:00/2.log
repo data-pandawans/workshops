@@ -1,0 +1,69 @@
+[2022-11-21 21:45:28,350] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: bash_operator.download_launches manual__2022-11-21T21:45:02.928692+00:00 [queued]>
+[2022-11-21 21:45:28,366] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: bash_operator.download_launches manual__2022-11-21T21:45:02.928692+00:00 [queued]>
+[2022-11-21 21:45:28,367] {taskinstance.py:1241} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 21:45:28,368] {taskinstance.py:1242} INFO - Starting attempt 2 of 2
+[2022-11-21 21:45:28,368] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 21:45:28,379] {taskinstance.py:1262} INFO - Executing <Task(BashOperator): download_launches> on 2022-11-21 21:45:02.928692+00:00
+[2022-11-21 21:45:28,387] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'bash_operator', 'download_launches', 'manual__2022-11-21T21:45:02.928692+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/bash_example.py', '--cfg-path', '/tmp/tmp_f9svb8v', '--error-file', '/tmp/tmpsnhq_lnz']
+[2022-11-21 21:45:28,388] {standard_task_runner.py:77} INFO - Job 8: Subtask download_launches
+[2022-11-21 21:45:28,384] {standard_task_runner.py:52} INFO - Started process 439 to run task
+[2022-11-21 21:45:28,432] {logging_mixin.py:109} INFO - Running <TaskInstance: bash_operator.download_launches manual__2022-11-21T21:45:02.928692+00:00 [running]> on host e6f0f1db9976
+[2022-11-21 21:45:28,474] {taskinstance.py:1414} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bash_operator
+AIRFLOW_CTX_TASK_ID=download_launches
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-21T21:45:02.928692+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-11-21T21:45:02.928692+00:00
+[2022-11-21 21:45:28,476] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-11-21 21:45:28,477] {subprocess.py:74} INFO - Running command: ['bash', '-c', "curl -o /datalake/bronze/launches.json -L 'https://ll.thespacedevs.com/2.0.0/launch/upcoming'"]
+[2022-11-21 21:45:28,486] {subprocess.py:85} INFO - Output:
+[2022-11-21 21:45:28,495] {subprocess.py:89} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2022-11-21 21:45:28,497] {subprocess.py:89} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2022-11-21 21:45:28,730] {subprocess.py:89} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+[2022-11-21 21:45:28,923] {subprocess.py:89} INFO - Warning: Failed to create the file /datalake/bronze/launches.json: No such
+[2022-11-21 21:45:28,925] {subprocess.py:89} INFO - Warning: file or directory
+[2022-11-21 21:45:28,926] {subprocess.py:89} INFO -   4 25360    4  1023    0     0   2395      0  0:00:10 --:--:--  0:00:10  2395
+[2022-11-21 21:45:28,927] {subprocess.py:89} INFO - curl: (23) Failed writing body (0 != 1023)
+[2022-11-21 21:45:28,928] {subprocess.py:93} INFO - Command exited with return code 23
+[2022-11-21 21:45:28,931] {taskinstance.py:1686} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1324, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1443, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1499, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/bash.py", line 188, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 23.
+[2022-11-21 21:45:28,947] {taskinstance.py:1280} INFO - Marking task as FAILED. dag_id=bash_operator, task_id=download_launches, execution_date=20221121T214502, start_date=20221121T214528, end_date=20221121T214528
+[2022-11-21 21:45:28,959] {standard_task_runner.py:91} ERROR - Failed to execute job 8 for task download_launches
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/cli/commands/task_command.py", line 292, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1324, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1443, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1499, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/bash.py", line 188, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 23.
+[2022-11-21 21:45:28,979] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-11-21 21:45:29,014] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,27 @@
+[2022-11-21 21:54:11,980] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: bash_operator.notify manual__2022-11-21T21:45:02.928692+00:00 [queued]>
+[2022-11-21 21:54:12,000] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: bash_operator.notify manual__2022-11-21T21:45:02.928692+00:00 [queued]>
+[2022-11-21 21:54:12,001] {taskinstance.py:1241} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 21:54:12,002] {taskinstance.py:1242} INFO - Starting attempt 2 of 2
+[2022-11-21 21:54:12,003] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-21 21:54:12,017] {taskinstance.py:1262} INFO - Executing <Task(BashOperator): notify> on 2022-11-21 21:45:02.928692+00:00
+[2022-11-21 21:54:12,026] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'bash_operator', 'notify', 'manual__2022-11-21T21:45:02.928692+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/bash_example.py', '--cfg-path', '/tmp/tmp03rz6h_y', '--error-file', '/tmp/tmpqo8e529w']
+[2022-11-21 21:54:12,028] {standard_task_runner.py:77} INFO - Job 20: Subtask notify
+[2022-11-21 21:54:12,022] {standard_task_runner.py:52} INFO - Started process 885 to run task
+[2022-11-21 21:54:12,080] {logging_mixin.py:109} INFO - Running <TaskInstance: bash_operator.notify manual__2022-11-21T21:45:02.928692+00:00 [running]> on host e6f0f1db9976
+[2022-11-21 21:54:12,149] {taskinstance.py:1414} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bash_operator
+AIRFLOW_CTX_TASK_ID=notify
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-21T21:45:02.928692+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-11-21T21:45:02.928692+00:00
+[2022-11-21 21:54:12,151] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-11-21 21:54:12,153] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo "There is $(ls /opt/***/datalake/bronze/ | wc -l) file."']
+[2022-11-21 21:54:12,164] {subprocess.py:85} INFO - Output:
+[2022-11-21 21:54:12,170] {subprocess.py:89} INFO - There is 1 file.
+[2022-11-21 21:54:12,171] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-11-21 21:54:12,202] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=bash_operator, task_id=notify, execution_date=20221121T214502, start_date=20221121T215411, end_date=20221121T215412
+[2022-11-21 21:54:12,245] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-11-21 21:54:12,278] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
