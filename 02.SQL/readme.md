@@ -1,10 +1,14 @@
 # SQL Crash Course
 
+## Videos
+
+- [Youtube](https://www.youtube.com/watch?v=DUUVJsCMLzY&ab_channel=Pandawans)
+
 ## Informations about DB
 
-- Host:
-- User: admin
-- Password: pandawans
+- Host: TO-DO
+- User: postgres
+- Password: pandawans123
 
 ### How to load data in DB
 
