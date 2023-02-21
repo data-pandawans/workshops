@@ -4,3 +4,6 @@
 # Python Files
 .python-version
 *.pyc
+
+# Jupyter Files
+*.ipynb_checkpoints
