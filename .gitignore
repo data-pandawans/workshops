@@ -1,0 +1,6 @@
+# Mac Files
+.DS_Store
+
+# Python Files
+.python-version
+*.pyc
